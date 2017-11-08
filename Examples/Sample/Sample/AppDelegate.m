@@ -22,7 +22,11 @@
     
     DZNWebViewController *controller = [[DZNWebViewController alloc] initWithFileURL:[NSURL fileURLWithPath:path]];
 #else
-    DZNWebViewController *controller = [[DZNWebViewController alloc] initWithURL:[NSURL URLWithString:@"https://dribbble.com/"]];
+    DZNWebViewController *controller = [[DZNWebViewController alloc] initWithURL:[NSURL URLWithString:@"https://baidu.com/"]];
+    controller.iphoneToolsIsTop = YES;
+    controller.supportedWebNavigationTools = DZNWebNavigationToolStopReload;
+    controller.webNavigationPrompt = DZNWebNavigationPromptTitle;
+    controller.hideBarsWithGestures = NO;
 #endif
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];

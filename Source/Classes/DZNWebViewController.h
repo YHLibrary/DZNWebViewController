@@ -62,6 +62,8 @@ typedef NS_OPTIONS(NSUInteger, DZNWebNavigationPrompt) {
 @property (nonatomic, readwrite) DZNWebNavigationTools supportedWebNavigationTools;
 /** The supported actions like sharing and copy link, add to reading list, open in Safari, etc. Default is All. */
 @property (nonatomic, readwrite) DZNsupportedWebActions supportedWebActions;
+/** iPhone上工具栏是否在顶部 ，Default is false*/
+@property (nonatomic, readwrite) BOOL iphoneToolsIsTop;
 /** The information to be shown on navigation bar. Default is DZNWebNavigationPromptAll. */
 @property (nonatomic, readwrite) DZNWebNavigationPrompt webNavigationPrompt;
 /** Yes if a progress bar indicates the . Default is YES. */

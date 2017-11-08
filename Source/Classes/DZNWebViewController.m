@@ -221,17 +221,17 @@ static char DZNWebViewControllerKVOContext = 0;
     }
     
     if ((self.supportedWebNavigationTools & DZNWebNavigationToolForward) > 0 || self.supportsAllNavigationTools) {
-        if (!DZN_IS_IPAD) [items addObject:flexibleSpace];
+        if (!(DZN_IS_IPAD)) [items addObject:flexibleSpace];
         [items addObject:self.forwardBarItem];
     }
     
     if ((self.supportedWebNavigationTools & DZNWebNavigationToolStopReload) > 0 || self.supportsAllNavigationTools) {
-        if (!DZN_IS_IPAD) [items addObject:flexibleSpace];
+        if (!(DZN_IS_IPAD)) [items addObject:flexibleSpace];
         [items addObject:self.stateBarItem];
     }
     
     if (self.supportedWebActions > 0) {
-        if (!DZN_IS_IPAD) [items addObject:flexibleSpace];
+        if (!(DZN_IS_IPAD)) [items addObject:flexibleSpace];
         [items addObject:self.actionBarItem];
     }
     
@@ -519,7 +519,7 @@ static char DZNWebViewControllerKVOContext = 0;
     controller.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissHistoryController)];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    UIView *bar = DZN_IS_IPAD ? self.navigationBar : self.toolbar;
+    UIView *bar = DZN_IS_IPAD||self.iphoneToolsIsTop ? self.navigationBar : self.toolbar;
     
     if (DZN_IS_IPAD) {
         UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
@@ -532,7 +532,7 @@ static char DZNWebViewControllerKVOContext = 0;
 
 - (void)configureToolBars
 {
-    if (DZN_IS_IPAD) {
+    if (DZN_IS_IPAD||self.iphoneToolsIsTop) {
         self.navigationItem.rightBarButtonItems = [[[self navigationToolItems] reverseObjectEnumerator] allObjects];
     }
     else {
@@ -553,7 +553,7 @@ static char DZNWebViewControllerKVOContext = 0;
         [self.navigationBar addObserver:self forKeyPath:@"alpha" options:NSKeyValueObservingOptionNew context:&DZNWebViewControllerKVOContext];
     }
 
-    if (!DZN_IS_IPAD && self.navigationController.toolbarHidden && self.toolbarItems.count > 0) {
+    if (!(DZN_IS_IPAD) && self.navigationController.toolbarHidden && self.toolbarItems.count >0 && !self.iphoneToolsIsTop) {
         [self.navigationController setToolbarHidden:NO];
     }
 }
