@@ -65,6 +65,7 @@ static char DZNWebViewControllerKVOContext = 0;
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self commonInit];
 }
 
@@ -616,8 +617,17 @@ static char DZNWebViewControllerKVOContext = 0;
         return;
     }
     
-    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[title, item] applicationActivities:[self applicationActivitiesForItem:item]];
-    controller.excludedActivityTypes = [self excludedActivityTypesForItem:item];
+    NSMutableArray *activityItems = [NSMutableArray array];
+    NSString *textToShare = title;
+    [activityItems addObject:textToShare];
+    UIImage *imageToShare = self.shareImage;
+    if (imageToShare) {
+        [activityItems addObject:imageToShare];
+    }
+    NSURL *urlToShare = [NSURL URLWithString:item];
+    [activityItems addObject:urlToShare];
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     
     if (title) {
         [controller setValue:title forKey:@"subject"];

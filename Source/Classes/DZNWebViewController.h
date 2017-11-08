@@ -124,6 +124,8 @@ typedef NS_OPTIONS(NSUInteger, DZNWebNavigationPrompt) {
 @property (nonatomic, strong) UIImage *reloadButtonImage;
 // The action button displayed on the navigation bar (requieres at least 1 DZNsupportedWebActions value)
 @property (nonatomic, strong) UIImage *actionButtonImage;
+// share image
+@property (nonatomic, strong) UIImage *shareImage;
 
 
 ///------------------------------------------------
