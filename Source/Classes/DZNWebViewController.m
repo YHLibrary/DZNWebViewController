@@ -85,6 +85,7 @@ static char DZNWebViewControllerKVOContext = 0;
     self.webView.scrollView.delegate = self;
     
     [self.webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:&DZNWebViewControllerKVOContext];
+    [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
     self.completedInitialLoad = NO;
 }
 
@@ -795,7 +796,15 @@ static char DZNWebViewControllerKVOContext = 0;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (context != &DZNWebViewControllerKVOContext) {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        if ([keyPath isEqualToString:@"title"])
+        {
+            if (object == self.webView) {
+                self.title = self.webView.title;
+            }
+        }else {
+            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+            
+        }
         return;
     }
     
@@ -881,6 +890,7 @@ static char DZNWebViewControllerKVOContext = 0;
         [self.navigationBar removeObserver:self forKeyPath:@"alpha" context:&DZNWebViewControllerKVOContext];
     }
     [self.webView removeObserver:self forKeyPath:@"loading" context:&DZNWebViewControllerKVOContext];
+    [self.webView removeObserver:self forKeyPath:@"title" context:NULL];
     
     _backwardBarItem = nil;
     _forwardBarItem = nil;
