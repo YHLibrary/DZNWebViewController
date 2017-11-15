@@ -34,6 +34,7 @@
 		4FC763F118E725C60009F375 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC763EE18E725C60009F375 /* Default-568h@2x.png */; };
 		4FC763F218E725C60009F375 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC763EF18E725C60009F375 /* Default.png */; };
 		4FC763F318E725C60009F375 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC763F018E725C60009F375 /* Default@2x.png */; };
+		66449C4F1FB30179000BEDD3 /* icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66449C4E1FB30179000BEDD3 /* icon-60@3x.png */; };
 		AA22BA647F7D4AA39B479ABC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9934BD31402B4CBE9A91C229 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		4FC763EE18E725C60009F375 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4FC763EF18E725C60009F375 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4FC763F018E725C60009F375 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		66449C4E1FB30179000BEDD3 /* icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@3x.png"; sourceTree = "<group>"; };
 		84072172328E77E3D64B7C81 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9934BD31402B4CBE9A91C229 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4997A7C5F4D6AACC9BD7B0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		4FB8460918E50C450056BDFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				66449C4E1FB30179000BEDD3 /* icon-60@3x.png */,
 				4F6A37581A20E09100323282 /* html-fixture */,
 				4FC763EE18E725C60009F375 /* Default-568h@2x.png */,
 				4FC763EF18E725C60009F375 /* Default.png */,
@@ -328,6 +331,7 @@
 				4FC763F218E725C60009F375 /* Default.png in Resources */,
 				4F6A37681A20E09100323282 /* analytics.js in Resources */,
 				4F6A376E1A20E09100323282 /* jquery.min.js in Resources */,
+				66449C4F1FB30179000BEDD3 /* icon-60@3x.png in Resources */,
 				4F6A376D1A20E09100323282 /* embed.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,6 +27,7 @@
     controller.supportedWebNavigationTools = DZNWebNavigationToolStopReload;
     controller.webNavigationPrompt = DZNWebNavigationPromptTitle;
     controller.hideBarsWithGestures = NO;
+    controller.shareImage = [UIImage imageNamed:@"icon-60@3x.png"];
 #endif
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];

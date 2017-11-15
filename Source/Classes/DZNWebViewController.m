@@ -450,6 +450,9 @@ static char DZNWebViewControllerKVOContext = 0;
 
 - (void)loadURL:(NSURL *)URL
 {
+    if (!URL) {
+        return;
+    }
     NSURL *baseURL = [[NSURL alloc] initFileURLWithPath:URL.path.stringByDeletingLastPathComponent isDirectory:YES];
     [self loadURL:URL baseURL:baseURL];
 }
